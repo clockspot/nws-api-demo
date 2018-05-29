@@ -155,7 +155,7 @@ function trimnum($numstr) {
 function callAPI($endpoint) {
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, "https://api.weather.gov/".$endpoint);
-  $headers = array('User-Agent: luke@theclockspot.com');
+  $headers = array('User-Agent: '.$GLOBALS['userAgentString']);
   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);  
   curl_setopt($ch, CURLOPT_HEADER, 0);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
