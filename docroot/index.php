@@ -232,7 +232,7 @@ function callAPI($endpoint) {
       <li class='break'><label for='station'>Station:</label> <input type='text' id='station' name='station' value='<?php echo $_REQUEST['station']; ?>' /></li>
       <li><input type='submit' name='reqtype' value='Latest observation' /></li>
       <li><input type='submit' name='reqtype' value='Recent observations' class='ehh' /></li>
-      <li class='break'><a href='<?php echo parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH); ?>'>Reset</a> <a href='#' id='clearform'>Clear</a> <a href='https://www.weather.gov/documentation/services-web-api' target='_new'>API Docs</a></li>
+      <li class='break'><a href='<?php echo parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH); ?>'>Reset</a>&nbsp; <a href='#' id='clearform'>Clear</a>&nbsp; <a href='https://www.weather.gov/documentation/services-web-api' target='_new'>API&nbsp;Docs</a>&nbsp; <a href='https://github.com/clockspot/nws-api-demo' target='_new'>Source&nbsp;on&nbsp;GitHub</a></li>
     </ul>
   </form>
   <div id='results'><?php
