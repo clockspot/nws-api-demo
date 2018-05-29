@@ -69,7 +69,7 @@ try { //for error message handling
 function getGridpoint($showRealResults) {
   $r = callAPI('points/'.$_REQUEST['coords']);
   $_REQUEST['wfo'] = $r->properties->cwa;
-  $_REQUEST['gridxy'] = $r->properties->gridX.','.$results->properties->gridY;
+  $_REQUEST['gridxy'] = $r->properties->gridX.','.$r->properties->gridY;
   return ($showRealResults? format($r): "<p>(Looked up gridpoint from lat/long)</p>");
 }
 function getRawGridData() {
@@ -162,7 +162,7 @@ function callAPI($endpoint) {
   $out = curl_exec($ch);
   curl_close($ch);
   $r = json_decode($out);
-  if(property_exists($r,'status') && property_exists($r,'detail')) throw new Exception($r->detail);
+  if(property_exists($r,'status') && property_exists($r,'detail')) { throw new Exception($r->detail); return false; }
   $r->originalEndpoint = $endpoint; //for display purposes
   return $r;
 }
